@@ -57,6 +57,6 @@ defmodule Mongo.PBKDF2 do
   end
 
   defp mac_fun(digest, secret) do
-    &:crypto.hmac(digest, secret, &1)
+    &:crypto.mac(:hmac, digest, secret, &1)
   end
 end
